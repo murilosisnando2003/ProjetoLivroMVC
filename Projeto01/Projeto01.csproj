@@ -125,6 +125,27 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804151855174_InitialCreate.cs" />
+    <Compile Include="Migrations\201804151855174_InitialCreate.Designer.cs">
+      <DependentUpon>201804151855174_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804180059096_Ajuste_Tipo_Field_Fabricante.cs" />
+    <Compile Include="Migrations\201804180059096_Ajuste_Tipo_Field_Fabricante.Designer.cs">
+      <DependentUpon>201804180059096_Ajuste_Tipo_Field_Fabricante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804180102362_Create_Categoria.cs" />
+    <Compile Include="Migrations\201804180102362_Create_Categoria.Designer.cs">
+      <DependentUpon>201804180102362_Create_Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804180111291_Field_Categoria.cs" />
+    <Compile Include="Migrations\201804180111291_Field_Categoria.Designer.cs">
+      <DependentUpon>201804180111291_Field_Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804180124295_Field_Categoria_Remove.cs" />
+    <Compile Include="Migrations\201804180124295_Field_Categoria_Remove.Designer.cs">
+      <DependentUpon>201804180124295_Field_Categoria_Remove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Fabricante.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -135,6 +156,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Fabricantes\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Fabricantes\Create.cshtml" />
+    <Content Include="Views\Fabricantes\Edit.cshtml" />
+    <Content Include="Views\Fabricantes\Details.cshtml" />
+    <Content Include="Views\Fabricantes\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -144,6 +169,23 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804151855174_InitialCreate.resx">
+      <DependentUpon>201804151855174_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804180059096_Ajuste_Tipo_Field_Fabricante.resx">
+      <DependentUpon>201804180059096_Ajuste_Tipo_Field_Fabricante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804180102362_Create_Categoria.resx">
+      <DependentUpon>201804180102362_Create_Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804180111291_Field_Categoria.resx">
+      <DependentUpon>201804180111291_Field_Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804180124295_Field_Categoria_Remove.resx">
+      <DependentUpon>201804180124295_Field_Categoria_Remove.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

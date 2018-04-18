@@ -13,5 +13,9 @@ namespace Projeto01.Contexts
         public EFContext() : base("Asp_Net_MVC_CS") { }
 
         public DbSet<Fabricante> Fabricantes { get; set; }
+
+       //public DbSet<Categoria> Categorias { get; set; }
+
+        
     }
 }
