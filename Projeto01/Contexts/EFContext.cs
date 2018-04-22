@@ -16,6 +16,10 @@ namespace Projeto01.Contexts
 
         public DbSet<Cidade> Cidades { get; set; }
 
+        public DbSet<Produto> Produtos { get; set; }
+
+        public System.Data.Entity.DbSet<Projeto01.Models.Categoria> Categorias { get; set; }
+
         //public DbSet<Categoria> Categorias { get; set; }
 
 

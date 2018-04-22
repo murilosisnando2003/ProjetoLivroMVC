@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace Projeto01.Models
 {
@@ -9,5 +6,7 @@ namespace Projeto01.Models
     {
         public long CategoriaId { get; set; }
         public string Nome { get; set; }
+
+        public virtual ICollection<Produto> Produtos { get; set; }
     }
 }
