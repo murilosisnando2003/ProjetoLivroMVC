@@ -281,6 +281,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Contexts\EFContext.cs" />
+    <Compile Include="Controllers\CidadesController.cs" />
     <Compile Include="Controllers\FabricantesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -305,7 +306,20 @@
     <Compile Include="Migrations\201804180124295_Field_Categoria_Remove.Designer.cs">
       <DependentUpon>201804180124295_Field_Categoria_Remove.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804181724417_Create_Cidade.cs" />
+    <Compile Include="Migrations\201804181724417_Create_Cidade.Designer.cs">
+      <DependentUpon>201804181724417_Create_Cidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804181726258_Create_Cidade_2.cs" />
+    <Compile Include="Migrations\201804181726258_Create_Cidade_2.Designer.cs">
+      <DependentUpon>201804181726258_Create_Cidade_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804181728534_Create_Cidade_3.cs" />
+    <Compile Include="Migrations\201804181728534_Create_Cidade_3.Designer.cs">
+      <DependentUpon>201804181728534_Create_Cidade_3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Cidade.cs" />
     <Compile Include="Models\Fabricante.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -320,6 +334,11 @@
     <Content Include="Views\Fabricantes\Edit.cshtml" />
     <Content Include="Views\Fabricantes\Details.cshtml" />
     <Content Include="Views\Fabricantes\Delete.cshtml" />
+    <Content Include="Views\Cidades\Create.cshtml" />
+    <Content Include="Views\Cidades\Delete.cshtml" />
+    <Content Include="Views\Cidades\Details.cshtml" />
+    <Content Include="Views\Cidades\Edit.cshtml" />
+    <Content Include="Views\Cidades\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -345,6 +364,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804180124295_Field_Categoria_Remove.resx">
       <DependentUpon>201804180124295_Field_Categoria_Remove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804181724417_Create_Cidade.resx">
+      <DependentUpon>201804181724417_Create_Cidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804181726258_Create_Cidade_2.resx">
+      <DependentUpon>201804181726258_Create_Cidade_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804181728534_Create_Cidade_3.resx">
+      <DependentUpon>201804181728534_Create_Cidade_3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

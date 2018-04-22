@@ -14,8 +14,10 @@ namespace Projeto01.Contexts
 
         public DbSet<Fabricante> Fabricantes { get; set; }
 
-       //public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Cidade> Cidades { get; set; }
 
-        
+        //public DbSet<Categoria> Categorias { get; set; }
+
+
     }
 }
