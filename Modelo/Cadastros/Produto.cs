@@ -1,4 +1,6 @@
-﻿namespace Projeto01.Models
+﻿using Modelo.Tabelas;
+
+namespace Modelo.Cadastros
 {
     public class Produto
     {

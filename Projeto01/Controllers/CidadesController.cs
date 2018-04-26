@@ -6,10 +6,10 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Projeto01.Contexts;
-using Projeto01.Models;
+using Persistencia.Contexts;
+using Persistencia.Models;
 
-namespace Projeto01.Controllers
+namespace Persistencia.Controllers
 {
     public class CidadesController : Controller
     {

@@ -1,11 +1,11 @@
-namespace Projeto01.Migrations
+namespace Persistencia.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Projeto01.Contexts.EFContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Persistencia.Contexts.EFContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace Projeto01.Migrations
             ContextKey = "Projeto01.Contexts.EFContext";
         }
 
-        protected override void Seed(Projeto01.Contexts.EFContext context)
+        protected override void Seed(Persistencia.Contexts.EFContext context)
         {
             //  This method will be called after migrating to the latest version.
 

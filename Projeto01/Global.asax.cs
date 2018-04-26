@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Projeto01
+namespace Persistencia
 {
     public class MvcApplication : System.Web.HttpApplication
     {

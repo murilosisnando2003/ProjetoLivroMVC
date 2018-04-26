@@ -1,9 +1,10 @@
-﻿using Projeto01.Models;
+﻿using Modelo.Tabelas;
+using Persistencia.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace Projeto01.Controllers
+namespace Persistencia.Controllers
 {
     public class CategoriasController : Controller
     {

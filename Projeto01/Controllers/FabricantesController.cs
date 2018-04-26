@@ -1,10 +1,11 @@
 ﻿using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using Projeto01.Contexts;
-using Projeto01.Models;
+using Modelo.Cadastros;
+using Persistencia.Contexts;
+using Persistencia.Models;
 
-namespace Projeto01.Controllers
+namespace Persistencia.Controllers
 {
     public class FabricantesController : Controller
     {

@@ -1,11 +1,12 @@
-﻿using Projeto01.Contexts;
+﻿using Persistencia.Contexts;
 using System.Linq;
 using System.Web.Mvc;
 using System.Data.Entity;
-using Projeto01.Models;
+using Persistencia.Models;
 using System.Net;
+using Modelo.Cadastros;
 
-namespace Projeto01.Controllers
+namespace Persistencia.Controllers
 {
     public class ProdutosController : Controller
     {

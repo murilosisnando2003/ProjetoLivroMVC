@@ -1,4 +1,4 @@
-namespace Projeto01.Migrations
+namespace Persistencia.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
