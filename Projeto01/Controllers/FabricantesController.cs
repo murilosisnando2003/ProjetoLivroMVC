@@ -2,24 +2,77 @@
 using System.Net;
 using System.Web.Mvc;
 using Modelo.Cadastros;
-using Persistencia.Contexts;
-using Persistencia.Models;
+using Servico.Cadastros;
+using Servico.Tabelas;
 
 namespace Persistencia.Controllers
 {
     public class FabricantesController : Controller
     {
-        private EFContext context = new EFContext();
+        private ProdutoServico produtoServico = new ProdutoServico();
+        private CategoriaServico categoriaServico = new CategoriaServico();
+        private FabricanteServico fabricanteServico = new FabricanteServico();
+
+
+        private ActionResult ObterVisaoFabricantePorId(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Fabricante fabricante = fabricanteServico.ObterFabricantePorId((long)id);
+            if (fabricante == null)
+            {
+                return HttpNotFound();
+            }
+            return View(fabricante);
+        }
+
+        private void PopularViewBag(Fabricante fabricante = null)
+        {
+            if (fabricante == null)
+            {
+                ViewBag.CategoriaId = new SelectList(categoriaServico.ObterCategoriasClassificadasPorNome(), "CategoriaId", "Nome");
+                ViewBag.FabricanteId = new SelectList(fabricanteServico.ObterFabricantesClassificacosPorNome(), "FabricanteId", "Nome");
+            }
+            else
+            {
+                ViewBag.CategoriaId = new SelectList(categoriaServico.ObterCategoriasClassificadasPorNome(), "CategoriaId", "Nome", fabricante.FabricanteId);
+                ViewBag.FabricanteId = new SelectList(fabricanteServico.ObterFabricantesClassificacosPorNome(), "FabricanteId", "Nome",fabricante.FabricanteId);
+            }
+        }
+
+        private ActionResult GravarFabricante(Fabricante fabricante)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    fabricanteServico.GravarFabricante(fabricante);
+                    return RedirectToAction("Index");
+                }
+                return View(fabricante);
+            }
+            catch
+            {
+                return View(fabricante);
+
+            }
+        }
+
+
+
         // GET: Fabricantes
         public ActionResult Index()
         {
-            return View(context.Fabricantes.OrderBy(c=>c.Nome));
+            return View(fabricanteServico.ObterFabricantesClassificacosPorNome());
         }
 
 
         //Create: Fabricantes
         public ActionResult Create()
         {
+            PopularViewBag();
             return View();
         }
 
@@ -27,25 +80,14 @@ namespace Persistencia.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Fabricante fabricante)
         {
-            context.Fabricantes.Add(fabricante);
-            context.SaveChanges();
-            return RedirectToAction("Index");
+            return GravarFabricante(fabricante);
         }
 
         //GET: Fabricante/Edit/5
         public ActionResult Edit(long? id)
         {
-            if (id ==null)
-            {
-                return new
-                    HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Fabricante fabricante = context.Fabricantes.Find(id);
-            if (fabricante==null)
-            {
-                return HttpNotFound();
-            }
-            return View(fabricante);
+            PopularViewBag(fabricanteServico.ObterFabricantePorId((long)id));
+            return ObterVisaoFabricantePorId(id);
         }
 
         //POST: Fabricante
@@ -53,54 +95,35 @@ namespace Persistencia.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Fabricante fabricante)
         {
-            if (ModelState.IsValid)
-            {
-                context.Entry(fabricante).State = System.Data.Entity.EntityState.Modified;
-                context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(fabricante);
+            return GravarFabricante(fabricante);
         }
         //GET: Fabricante/Details/5
         public ActionResult Details(long? id)
         {
-            if (id == null)
-            {
-                return new
-                    HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Fabricante fabricante = context.Fabricantes.Find(id);
-            if (fabricante == null)
-            {
-                return HttpNotFound();
-            }
-            return View(fabricante);
+            return ObterVisaoFabricantePorId(id);
         }
 
         //GET: Fabricante/Details/5
         public ActionResult Delete(long? id)
         {
-            if (id == null)
-            {
-                return new
-                    HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Fabricante fabricante = context.Fabricantes.Find(id);
-            if (fabricante == null)
-            {
-                return HttpNotFound();
-            }
-            return View(fabricante);
+            return ObterVisaoFabricantePorId(id);
         }
         //POST: Fabricantes/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(long id)
         {
-            Fabricante fabricante = context.Fabricantes.Find(id);
-            context.Fabricantes.Remove(fabricante);
-            context.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                Fabricante fabricante = fabricanteServico.EliminarFabricantePorId(id);
+                TempData["Message"] = "Fabricante " + fabricante.Nome.ToUpper() + " foi removido";
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+
+                return View();
+            }
         }
 
     }

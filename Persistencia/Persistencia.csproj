@@ -48,6 +48,70 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexts\EFContext.cs" />
+    <Compile Include="DAL\Cadastros\FabricanteDAL.cs" />
+    <Compile Include="DAL\Cadastros\ProdutoDAL.cs" />
+    <Compile Include="DAL\Tabelas\CategoriaDAL.cs" />
+    <Compile Include="Migrations\201804151855174_InitialCreate.cs" />
+    <Compile Include="Migrations\201804151855174_InitialCreate.Designer.cs">
+      <DependentUpon>201804151855174_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804180059096_Ajuste_Tipo_Field_Fabricante.cs" />
+    <Compile Include="Migrations\201804180059096_Ajuste_Tipo_Field_Fabricante.Designer.cs">
+      <DependentUpon>201804180059096_Ajuste_Tipo_Field_Fabricante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804180102362_Create_Categoria.cs" />
+    <Compile Include="Migrations\201804180102362_Create_Categoria.Designer.cs">
+      <DependentUpon>201804180102362_Create_Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804180111291_Field_Categoria.cs" />
+    <Compile Include="Migrations\201804180111291_Field_Categoria.Designer.cs">
+      <DependentUpon>201804180111291_Field_Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804180124295_Field_Categoria_Remove.cs" />
+    <Compile Include="Migrations\201804180124295_Field_Categoria_Remove.Designer.cs">
+      <DependentUpon>201804180124295_Field_Categoria_Remove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804181724417_Create_Cidade.cs" />
+    <Compile Include="Migrations\201804181724417_Create_Cidade.Designer.cs">
+      <DependentUpon>201804181724417_Create_Cidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804181726258_Create_Cidade_2.cs" />
+    <Compile Include="Migrations\201804181726258_Create_Cidade_2.Designer.cs">
+      <DependentUpon>201804181726258_Create_Cidade_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804181728534_Create_Cidade_3.cs" />
+    <Compile Include="Migrations\201804181728534_Create_Cidade_3.Designer.cs">
+      <DependentUpon>201804181728534_Create_Cidade_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804222013192_Categoria_Update.cs" />
+    <Compile Include="Migrations\201804222013192_Categoria_Update.Designer.cs">
+      <DependentUpon>201804222013192_Categoria_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804222023033_Create_Produto.cs" />
+    <Compile Include="Migrations\201804222023033_Create_Produto.Designer.cs">
+      <DependentUpon>201804222023033_Create_Produto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804222034444_Create_Produto_Update.cs" />
+    <Compile Include="Migrations\201804222034444_Create_Produto_Update.Designer.cs">
+      <DependentUpon>201804222034444_Create_Produto_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804222035418_Create_Produto_Update2.cs" />
+    <Compile Include="Migrations\201804222035418_Create_Produto_Update2.Designer.cs">
+      <DependentUpon>201804222035418_Create_Produto_Update2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804292125343_Ajustes.cs" />
+    <Compile Include="Migrations\201804292125343_Ajustes.Designer.cs">
+      <DependentUpon>201804292125343_Ajustes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804292148016_ajustes2.cs" />
+    <Compile Include="Migrations\201804292148016_ajustes2.Designer.cs">
+      <DependentUpon>201804292148016_ajustes2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804292200442_ajustes3.cs" />
+    <Compile Include="Migrations\201804292200442_ajustes3.Designer.cs">
+      <DependentUpon>201804292200442_ajustes3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,8 +125,51 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAL\Cadastros\" />
-    <Folder Include="DAL\Tabelas\" />
+    <EmbeddedResource Include="Migrations\201804151855174_InitialCreate.resx">
+      <DependentUpon>201804151855174_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804180059096_Ajuste_Tipo_Field_Fabricante.resx">
+      <DependentUpon>201804180059096_Ajuste_Tipo_Field_Fabricante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804180102362_Create_Categoria.resx">
+      <DependentUpon>201804180102362_Create_Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804180111291_Field_Categoria.resx">
+      <DependentUpon>201804180111291_Field_Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804180124295_Field_Categoria_Remove.resx">
+      <DependentUpon>201804180124295_Field_Categoria_Remove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804181724417_Create_Cidade.resx">
+      <DependentUpon>201804181724417_Create_Cidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804181726258_Create_Cidade_2.resx">
+      <DependentUpon>201804181726258_Create_Cidade_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804181728534_Create_Cidade_3.resx">
+      <DependentUpon>201804181728534_Create_Cidade_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804222013192_Categoria_Update.resx">
+      <DependentUpon>201804222013192_Categoria_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804222023033_Create_Produto.resx">
+      <DependentUpon>201804222023033_Create_Produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804222034444_Create_Produto_Update.resx">
+      <DependentUpon>201804222034444_Create_Produto_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804222035418_Create_Produto_Update2.resx">
+      <DependentUpon>201804222035418_Create_Produto_Update2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804292125343_Ajustes.resx">
+      <DependentUpon>201804292125343_Ajustes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804292148016_ajustes2.resx">
+      <DependentUpon>201804292148016_ajustes2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804292200442_ajustes3.resx">
+      <DependentUpon>201804292200442_ajustes3.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

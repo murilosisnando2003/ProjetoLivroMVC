@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Persistencia
+namespace Projeto01
 {
     public class RouteConfig
     {
@@ -16,7 +16,7 @@ namespace Persistencia
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Fabricantes", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Produtos", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

@@ -281,62 +281,11 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
-    <Compile Include="Controllers\CidadesController.cs" />
     <Compile Include="Controllers\FabricantesController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804151855174_InitialCreate.cs" />
-    <Compile Include="Migrations\201804151855174_InitialCreate.Designer.cs">
-      <DependentUpon>201804151855174_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804180059096_Ajuste_Tipo_Field_Fabricante.cs" />
-    <Compile Include="Migrations\201804180059096_Ajuste_Tipo_Field_Fabricante.Designer.cs">
-      <DependentUpon>201804180059096_Ajuste_Tipo_Field_Fabricante.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804180102362_Create_Categoria.cs" />
-    <Compile Include="Migrations\201804180102362_Create_Categoria.Designer.cs">
-      <DependentUpon>201804180102362_Create_Categoria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804180111291_Field_Categoria.cs" />
-    <Compile Include="Migrations\201804180111291_Field_Categoria.Designer.cs">
-      <DependentUpon>201804180111291_Field_Categoria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804180124295_Field_Categoria_Remove.cs" />
-    <Compile Include="Migrations\201804180124295_Field_Categoria_Remove.Designer.cs">
-      <DependentUpon>201804180124295_Field_Categoria_Remove.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804181724417_Create_Cidade.cs" />
-    <Compile Include="Migrations\201804181724417_Create_Cidade.Designer.cs">
-      <DependentUpon>201804181724417_Create_Cidade.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804181726258_Create_Cidade_2.cs" />
-    <Compile Include="Migrations\201804181726258_Create_Cidade_2.Designer.cs">
-      <DependentUpon>201804181726258_Create_Cidade_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804181728534_Create_Cidade_3.cs" />
-    <Compile Include="Migrations\201804181728534_Create_Cidade_3.Designer.cs">
-      <DependentUpon>201804181728534_Create_Cidade_3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804222013192_Categoria_Update.cs" />
-    <Compile Include="Migrations\201804222013192_Categoria_Update.Designer.cs">
-      <DependentUpon>201804222013192_Categoria_Update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804222023033_Create_Produto.cs" />
-    <Compile Include="Migrations\201804222023033_Create_Produto.Designer.cs">
-      <DependentUpon>201804222023033_Create_Produto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804222034444_Create_Produto_Update.cs" />
-    <Compile Include="Migrations\201804222034444_Create_Produto_Update.Designer.cs">
-      <DependentUpon>201804222034444_Create_Produto_Update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804222035418_Create_Produto_Update2.cs" />
-    <Compile Include="Migrations\201804222035418_Create_Produto_Update2.Designer.cs">
-      <DependentUpon>201804222035418_Create_Produto_Update2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Cidade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -350,11 +299,6 @@
     <Content Include="Views\Fabricantes\Edit.cshtml" />
     <Content Include="Views\Fabricantes\Details.cshtml" />
     <Content Include="Views\Fabricantes\Delete.cshtml" />
-    <Content Include="Views\Cidades\Create.cshtml" />
-    <Content Include="Views\Cidades\Delete.cshtml" />
-    <Content Include="Views\Cidades\Details.cshtml" />
-    <Content Include="Views\Cidades\Edit.cshtml" />
-    <Content Include="Views\Cidades\Index.cshtml" />
     <Content Include="Views\Categorias\Create.cshtml" />
     <Content Include="Views\Categorias\Delete.cshtml" />
     <Content Include="Views\Categorias\Details.cshtml" />
@@ -366,6 +310,7 @@
     <Content Include="Views\Produtos\Edit.cshtml" />
     <Content Include="Views\Produtos\Index.cshtml" />
     <Content Include="Views\Produtos\_PorFabricante.cshtml" />
+    <Content Include="Views\Produtos\_PartialDetailsContentPanel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -375,49 +320,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804151855174_InitialCreate.resx">
-      <DependentUpon>201804151855174_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804180059096_Ajuste_Tipo_Field_Fabricante.resx">
-      <DependentUpon>201804180059096_Ajuste_Tipo_Field_Fabricante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804180102362_Create_Categoria.resx">
-      <DependentUpon>201804180102362_Create_Categoria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804180111291_Field_Categoria.resx">
-      <DependentUpon>201804180111291_Field_Categoria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804180124295_Field_Categoria_Remove.resx">
-      <DependentUpon>201804180124295_Field_Categoria_Remove.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804181724417_Create_Cidade.resx">
-      <DependentUpon>201804181724417_Create_Cidade.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804181726258_Create_Cidade_2.resx">
-      <DependentUpon>201804181726258_Create_Cidade_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804181728534_Create_Cidade_3.resx">
-      <DependentUpon>201804181728534_Create_Cidade_3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804222013192_Categoria_Update.resx">
-      <DependentUpon>201804222013192_Categoria_Update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804222023033_Create_Produto.resx">
-      <DependentUpon>201804222023033_Create_Produto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804222034444_Create_Produto_Update.resx">
-      <DependentUpon>201804222034444_Create_Produto_Update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804222035418_Create_Produto_Update2.resx">
-      <DependentUpon>201804222035418_Create_Produto_Update2.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj">
       <Project>{6c312675-dc61-48a3-8a0e-a75c2cad8c9d}</Project>
       <Name>Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Servico\Servico.csproj">
+      <Project>{94F5580B-60CA-407B-83B9-8630A36BECEC}</Project>
+      <Name>Servico</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
